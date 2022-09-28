@@ -1,7 +1,7 @@
 # Calendar Widget for use with python tkinter
 
-<img align="left" src="https://github.com/Spartanlasergun/tkinter_calendar_widget/blob/main/README_info/Calendar%20-%20Light%20Theme.png">
-<img align="right" src="https://github.com/Spartanlasergun/tkinter_calendar_widget/blob/main/README_info/Calendar%20-%20Dark%20Theme.png">
+<img align="left" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar%20-%20Light%20Theme.png">
+<img align="right" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar%20-%20Dark%20Theme.png">
 
 #
 #
@@ -85,32 +85,32 @@ The table below specifies opitons availiable for styling and other operations as
 
 ### Creating the Calendar
 
-![Calendar_Usage](https://github.com/Spartanlasergun/tkinter_calendar_widget/blob/main/README_info/Calendar_Usage.png)
+![Calendar_Usage](https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar_Usage.png)
 
 #
 
 ### Get the selected date
 
-![get_date](https://github.com/Spartanlasergun/tkinter_calendar_widget/blob/main/README_info/get_date.png)
+![get_date](https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/get_date.png)
 
 #
 
 ### Create checkboxes on the calendar
 
-![create_checkboxes](https://github.com/Spartanlasergun/tkinter_calendar_widget/blob/main/README_info/checkbox_usage.png)
+![create_checkboxes](https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/checkbox_usage.png)
 
 result:    
-<img align="center" src="https://github.com/Spartanlasergun/tkinter_calendar_widget/blob/main/README_info/checkbox_example.png">
+<img align="center" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/checkbox_example.png">
 
 
-![removing_checkbox](https://github.com/Spartanlasergun/tkinter_calendar_widget/blob/main/README_info/removing_checkbox.png)
+![removing_checkbox](https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/removing_checkbox.png)
 
 result:     
-<img align="center" src="https://github.com/Spartanlasergun/tkinter_calendar_widget/blob/main/README_info/remove_checkbox_output.png">
+<img align="center" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/remove_checkbox_output.png">
 
 #
 
 ### Click bind a command to the calendar
 
-![calendar_command](https://github.com/Spartanlasergun/tkinter_calendar_widget/blob/main/README_info/Calendar_Command.png)
+![calendar_command](https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar_Command.png)
 
