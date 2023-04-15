@@ -18,7 +18,7 @@ class Calendar:
                  calendar_date_title="black", date_text_fill="black", trail_box_fill="gray83", trail_text_fill="black",
                  date_highlight="orange", text_highlight_fill="black", weekday_font_family="Algerian",
                  date_heading_font_family="Garamond", date_text_font_family="Arial CE", user_highlight_colour="gray75",
-                 user_highlight_text="black"):
+                 user_highlight_text="black", wholesystem-font-weight="normal", wholesystem-font-style="roman"):
 
         self.command = command   # create global instance of user command for use within the click binding
 
@@ -136,7 +136,7 @@ class Calendar:
             heading_inc = heading_inc + 1
 
         font_size = int((box_depth * 0.75) * 0.75)
-        weekday_font = font.Font(family=weekday_font_family, size=font_size)
+        weekday_font = font.Font(family=weekday_font_family, size=font_size, weight="wholesystem-font-weight", slant="wholesystem-font-style")
         for day in weekdays:
             weekday_coords = self.Calendar.coords(day)
             letter_x = (weekday_coords[0] + weekday_coords[2]) / 2
@@ -169,7 +169,8 @@ class Calendar:
         self.arrow_date_x = (arrow_box_coords[0] + arrow_box_coords[2]) / 2
         self.arrow_date_y = (arrow_box_coords[1] + arrow_box_coords[3]) / 2
         font_size = int((self.arrow_date_y * 0.75) * 0.5)
-        self.date_heading_font = font.Font(family=date_heading_font_family, size=font_size)
+        self.date_heading_font = font.Font(family=date_heading_font_family, size=font_size,
+                                            weight="wholesystem-font-weight", slant="wholesystem-font-style")
         self.Calendar.create_text(self.arrow_date_x, self.arrow_date_y, text=self.date_today, anchor="center",
                                   font=self.date_heading_font,
                                   fill=self.calendar_date_title, tags="arrow_box_date")
@@ -184,7 +185,8 @@ class Calendar:
         depth_inc = 0
         box_count = 0
         self.date_box_font_size = int(((box_depth) * 0.75) * 0.6)
-        self.date_text_font = font.Font(family=date_text_font_family, size=self.date_box_font_size)
+        self.date_text_font = font.Font(family=date_text_font_family, size=self.date_box_font_size,
+                                                    weight="wholesystem-font-weight", slant="wholesystem-font-style")
         self.date_box_tags = []
         while box_count != 42:
             box_tag = "date_box_" + str(box_count)
