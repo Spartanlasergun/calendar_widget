@@ -17,15 +17,12 @@
 
 ------
 
-<<<<<<< HEAD
 ------
 
 ------
 
 ------
 
-=======
->>>>>>> 00ceb32390497df6ee061051f2ed4c1c62c684f0
 # Installation
 
 ##### Install the calendar widget using the following commands
