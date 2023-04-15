@@ -1,24 +1,57 @@
 # Calendar Widget for use with python tkinter
 
-<img align="left" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar%20-%20Light%20Theme.png">
-<img align="right" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar%20-%20Dark%20Theme.png">
+<img align="left" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar%20-%20Light%20Theme.png?raw=true">
+<img align="right" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar%20-%20Dark%20Theme.png?raw=true">
 
-#
-#
-#
-#
-#
-#
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+# Installation
+
+##### Install the calendar widget using the following commands
+```
+pip install calendar_widget
+```
+
 # USAGE
 
-##### The Calendar Widget is created as follows:
+#### First, Import the calendar widget along with tkinter
 ```
-Calendar = Calendar(parent, option=value, ...)
+import tkinter
+from calendar_widget import Calendar
+```
+
+##### Define the tkinter window into which the widget will be placed. EXAMPLE:
+```
+root = tkinter.Tk()
+root.geometry('600x600')
+```
+
+##### The Calendar Widget can then be created as follows:
+```
+Calendar = Calendar(root)
 ```
 
 ##### To pass a command to the Calendar, specify the command option when it is created
 ```
-Calendar = Calendar(parent, command=user_command, ...)
+Calendar = Calendar(root, command=user_command, ...)
 ```
 
 ##### To retrieve a selected date on the calendar, use the get_date command:
@@ -78,39 +111,4 @@ The table below specifies opitons availiable for styling and other operations as
 | text_highlight_fill= | Sets the colour of the text associated with the permanent date highlight. |
 | user_highlight_colour= | Sets the colour of the highlight that is created when the user clicks on a month date. |
 | user_highlight_text= | Sets the colour of the text associated with the user highlight. |
-
-
-
-# EXAMPLES:
-
-### Creating the Calendar
-
-![Calendar_Usage](https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar_Usage.png)
-
-#
-
-### Get the selected date
-
-![get_date](https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/get_date.png)
-
-#
-
-### Create checkboxes on the calendar
-
-![create_checkboxes](https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/checkbox_usage.png)
-
-result:    
-<img align="center" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/checkbox_example.png">
-
-
-![removing_checkbox](https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/removing_checkbox.png)
-
-result:     
-<img align="center" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/remove_checkbox_output.png">
-
-#
-
-### Click bind a command to the calendar
-
-![calendar_command](https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar_Command.png)
 
