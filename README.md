@@ -81,36 +81,4 @@ The table below specifies opitons availiable for styling and other operations as
 
 
 
-# EXAMPLES:
-
-### Creating the Calendar
-
-![Calendar_Usage](https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar_Usage.png)
-
-#
-
-### Get the selected date
-
-![get_date](https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/get_date.png)
-
-#
-
-### Create checkboxes on the calendar
-
-![create_checkboxes](https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/checkbox_usage.png)
-
-result:    
-<img align="center" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/checkbox_example.png">
-
-
-![removing_checkbox](https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/removing_checkbox.png)
-
-result:     
-<img align="center" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/remove_checkbox_output.png">
-
-#
-
-### Click bind a command to the calendar
-
-![calendar_command](https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar_Command.png)
-
+# EXAMPLES
