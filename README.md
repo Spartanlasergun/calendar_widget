@@ -1,7 +1,7 @@
 # Calendar Widget for use with python tkinter
 
-<img align="left" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar%20-%20Light%20Theme.png">
-<img align="right" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar%20-%20Dark%20Theme.png">
+<img align="left" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar%20-%20Light%20Theme.png?raw=true">
+<img align="right" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar%20-%20Dark%20Theme.png?raw=true">
 
 #
 #
