@@ -64,15 +64,10 @@ class Calendar:
             self.text_highlight_fill = "black"
 
 
-        # The minimum width of the calendar object is set at 300 pixels. The depth and the padding are both factors of
+        # The default width of the calendar object is set at 300 pixels. The depth and the padding are both factors of
         # the width.
-        if size < 300:
-            size = 300
-        size = size
         depth = (0.666 * size)
-        depth = depth
         padding = int(size * 0.03333)
-        padding = padding
 
         # create the tkinter canvas onto which the calendar will be created
         self.Calendar = tkinter.Canvas(window_name, width=size, height=depth,
