@@ -78,7 +78,7 @@ The table below specifies opitons availiable for styling and other operations as
 
 | options | description |
 | ------- | ----------- |
-| size= | Sets the width of the widget in pixels. The default/minimum width is 300px. |
+| size= | Sets the width of the widget in pixels. The default width is 300px. |
 | pos_x= | Sets the x coordinate position of the widget within the window. Note: In tkinter, this is always the top left corner. |
 | pos_y= | Sets the y coordinate position of the widget within the window. Note: In tkinter, this is always the top left corner. |
 | style= | Set the style="Dark" for the dark theme. If no styling is specified the Calendar will inherit its default white theme. |
