@@ -9,7 +9,7 @@ class Calendar:
     # The init function parameters describe the information that dictates the size, position and styling associated with
     # the calendar object. Comments associated with the usage of each parameter is given within the __init__ function
     # where they are first defined and used.
-    def __init__(self, window_name, pos_x=0, pos_y=0, size=300, style=None, command="no command",
+    def __init__(self, window_name, pos_x=None, pos_y=None, size=300, style=None, command="no command",
                  background="white", calendar_relief="flat",
                  arrow_box_border="black", arrow_box_fill="white", arrow_box_width=1,
                  date_box_border="black", date_box_fill="white", date_box_width=2, date_boxes_outline="black",
@@ -74,9 +74,13 @@ class Calendar:
                                        background=background, relief=calendar_relief)
 
         # position the calendar with the default "pack" option or according the user specified x and y coordinates
-        if (pos_x == 0) and (pos_y == 0):
+        if (pos_x == None) and (pos_y == None):
             self.Calendar.pack()
         else:
+            if pos_x == None:
+                pos_x = 0
+            if pos_y == None:
+                pos_y = 0
             self.Calendar.place(x=pos_x, y=pos_y)
 
         # Calendar Arrow Box
