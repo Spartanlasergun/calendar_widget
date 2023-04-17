@@ -104,6 +104,29 @@ Note: if no 'pos_x' or 'pos_y' parameters are given, the Calendar widget will de
 
 -----
 
+## Example 2 - Binding a command to the calendar
+
+-----
+
+```
+# the 'Calendar_Click' function retrives the date selected on the Calendar by the user, and prints the date to the console
+def Calendar_Click():
+	print(Calendar.getdate())
+
+# create the calendar widget
+Calendar = Calendar(root,
+	size = 250,
+	pos_x = 0,
+	pos_y = 0, 
+	background = 'lightblue', 
+	command = Calendar_Click  # link the 'Calendar_Click' function to the widget
+	)
+```
+
+Note: Only a single command can be linked to the calendar widget.
+
+-----
+
 # Widget Parameters - functionality and styling
 
 The table below specifies opitons availiable for styling and other operations associated with the calendar widget
