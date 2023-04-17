@@ -76,7 +76,7 @@ Calendar.destroy()
 ## Example 1 - Basic Setup
 
 -----
-<img align="right" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/Calendar%20-%20Dark%20Theme.png?raw=true">
+<img align="right" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/example_one.png?raw=true">
 
 ```
 # import tkinter and the calendar widget
@@ -99,6 +99,9 @@ Calendar = Calendar(root, # specify the tkinter window into which the widget wil
 # remember to call your mainloop function so that the tkinter window is persistent
 root.mainloop()
 ```
+
+Note: if no 'pos_x' or 'pos_y' parameters are given, the Calendar widget will default to using the standard pack function.
+
 -----
 
 # Widget Parameters - functionality and styling
