@@ -7,3 +7,4 @@ src/calendar_widget.egg-info/PKG-INFO
 src/calendar_widget.egg-info/SOURCES.txt
 src/calendar_widget.egg-info/dependency_links.txt
 src/calendar_widget.egg-info/top_level.txt
+tests/test.py

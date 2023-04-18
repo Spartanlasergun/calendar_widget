@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: calendar-widget
-Version: 1.0.2
+Version: 1.0.3
 Summary: Calendar widget for use with python tkinter
 Author-email: Spartanlasergun <bns360@live.com>
 Project-URL: Homepage, https://github.com/Spartanlasergun/calendar_widget
@@ -117,6 +117,29 @@ root.mainloop()
 ```
 
 Note: if no 'pos_x' or 'pos_y' parameters are given, the Calendar widget will default to using the standard pack function.
+
+-----
+
+## Example 2 - Binding a command to the calendar
+
+-----
+
+```
+# the 'Calendar_Click' function retrives the date selected on the Calendar by the user, and prints the date to the console
+def Calendar_Click():
+	print(Calendar.getdate())
+
+# create the calendar widget
+Calendar = Calendar(root,
+	size = 250,
+	pos_x = 0,
+	pos_y = 0, 
+	background = 'lightblue', 
+	command = Calendar_Click  # link the 'Calendar_Click' function to the widget
+	)
+```
+
+Note: Only a single command can be linked to the calendar widget.
 
 -----
 
