@@ -138,12 +138,10 @@ The table below specifies opitons availiable for styling and other operations as
 | pos_y= | Sets the y coordinate position of the widget within the window. Note: In tkinter, this is always the top left corner. |
 | style= | Set the style="Dark" for the dark theme. If no styling is specified the Calendar will inherit its default white theme. |
 | command= | A function to be called when the widget is clicked. |
-| background= | Sets the background of the Calendar to a valid tkinter colour. Example: background="blue" |
-| calendar_relief= | Sets the relief of the Calendar widget. |
+| background= | Sets the background of the Calendar to a valid tkinter colour or image (png, gif, ppm, pgm). Example: background="blue" or background='sky.png' |
 | arrow_box_border= | Sets the border colour of the box containing the arrows for selecting previous and following months. |
 | arrow_box_fill= | Sets the background of the box containing the arrows for selecting previous and following months |
 | arrow_box_width= | Sets the line width of the box containing the arrows for selecting previous and following months |
-| date_box_border= | Sets the colour of the border associated with the monthly calendar grid. |
 | date_box_fill= | Sets the colour inside of the boxes that make up the monthly calendar grid. |
 | date_box_width= | Sets the width of the line used to create the grid for the monthly calendar. |
 | date_boxes_outline= | Sets the colour of the box outline for the boxes that make up the monthly claendar grid. |
