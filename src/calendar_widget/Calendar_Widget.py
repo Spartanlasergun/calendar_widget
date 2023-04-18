@@ -70,7 +70,6 @@ class Calendar:
             arrow_box_border = "gray25"              # colour of the box outline that contains the arrows for selecting previous and following months
             arrow_box_fill = "gray7"                 # colour inside the box that contains the arrows
             arrow_box_width = 1                      # width of the line used to create the box that contains the arrows
-            date_box_border = "gray25"               # colour of the border associated with the monthly calendar grid
             date_box_fill = "gray7"                  # colour inside the boxes that make up the monthly calendar grid
             date_box_width = 2                       # width of the line used to create the grid for the monthly calendar
             self.date_boxes_outline = "gray50"       # colour of the box outline for the boxes that make up the monthly claendar grid
