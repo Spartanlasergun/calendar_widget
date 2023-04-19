@@ -96,6 +96,9 @@ Calendar = Calendar(root, # specify the tkinter window into which the widget wil
 	background = 'lightblue', # set the background of the calendar to light blue
 	)
 
+# Note: images of the type 'png', 'gif', 'ppm', and 'pgm' can be set as the background.
+# However, these images will not scale with the size of the calendar.
+
 # remember to call your mainloop function so that the tkinter window is persistent
 root.mainloop()
 ```
@@ -139,6 +142,9 @@ The table below specifies opitons availiable for styling and other operations as
 | style= | Set the style="Dark" for the dark theme. If no styling is specified the Calendar will inherit its default white theme. |
 | command= | A function to be called when the widget is clicked. |
 | background= | Sets the background of the Calendar to a valid tkinter colour or image (png, gif, ppm, pgm). Example: background="blue" or background='sky.png' |
+| img_pos_x= | Set the x coordinate of the background image if specified (by default, this is the top left corner) |
+| img_pos_y= | Set the y coordinate of the background image if specified (by default, this is the top left corner) |
+| img_anchor= | Set the anchor of the background image if specified (by default, this is set to 'nw' - the top left corner) |
 | arrow_box_border= | Sets the border colour of the box containing the arrows for selecting previous and following months. |
 | arrow_box_fill= | Sets the background of the box containing the arrows for selecting previous and following months |
 | arrow_box_width= | Sets the line width of the box containing the arrows for selecting previous and following months |
