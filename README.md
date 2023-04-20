@@ -26,41 +26,41 @@
 # INSTALLATION
 
 ##### Install the calendar widget using the following commands
-```
+```python
 pip install calendar_widget
 ```
 
 # USAGE
 
 #### First, Import the calendar widget along with tkinter
-```
+```python
 import tkinter
 from calendar_widget import Calendar
 ```
 
 ##### Define the tkinter window into which the widget will be placed. EXAMPLE:
-```
+```python
 root = tkinter.Tk()
 root.geometry('600x600')
 ```
 
 ##### The Calendar Widget can then be created as follows:
-```
+```python
 Calendar = Calendar(root)
 ```
 
 ##### To pass a command to the Calendar, specify the command option when it is created
-```
+```python
 Calendar = Calendar(root, command=user_command, ...)
 ```
 
 ##### To retrieve a selected date on the calendar, use the get_date command:
-```
+```python
 Calender.get_date()
 ```
 
 ##### To create a checkbox on the calendar, the command is as follows:
-```
+```python
 checkbox = Calendar.checkboxes(10, 10, 2022, status=True, ...)
 
 #to remove a chcekbox that has already been created specify the delete option as follows:
@@ -69,7 +69,7 @@ Calendar.checkboxes(10, 10, 2022, delete=True)
 ```
 
 ##### To destroy the calendar widget, call the destroy method:
-```
+```python
 Calendar.destroy()
 ```
 
@@ -78,7 +78,7 @@ Calendar.destroy()
 -----
 <img align="right" src="https://github.com/Spartanlasergun/calendar_widget/blob/main/README_info/example_one.png?raw=true">
 
-```
+```python
 # import tkinter and the calendar widget
 import tkinter
 from calendar_widget import Calendar
@@ -111,7 +111,7 @@ Note: if no 'pos_x' or 'pos_y' parameters are given, the Calendar widget will de
 
 -----
 
-```
+```python
 # the 'Calendar_Click' function retrives the date selected on the Calendar by the user, and prints the date to the console
 def Calendar_Click():
 	print(Calendar.getdate())
