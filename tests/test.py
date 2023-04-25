@@ -11,10 +11,13 @@ root.geometry('600x600')
 def Calendar_Click():
 	print(Calendar.getdate())
 
-
-Calendar = Calendar(root)
-
-Calendar.checkboxes(8, 4, 2023, status=True)
-Calendar.checkboxes(31, 3, 2023, status=False)
+Calendar = Calendar(root,
+	date_heading_font_weight='normal',
+	date_text_font_weight='normal',
+	weekday_font_weight='normal',
+	date_heading_font_slant='roman',
+	date_text_font_slant='roman',
+	weekday_font_slant='roman',
+	command=Calendar_Click)
 
 root.mainloop()
