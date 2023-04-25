@@ -18,6 +18,9 @@ Calendar = Calendar(root,
 	date_heading_font_slant='roman',
 	date_text_font_slant='roman',
 	weekday_font_slant='roman',
+	weekday_font_underline=False,
+	date_heading_font_underline=False,
+	date_text_font_underline=False,
 	command=Calendar_Click)
 
 root.mainloop()
