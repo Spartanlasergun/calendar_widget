@@ -41,19 +41,23 @@ class Calendar:
             weekday_font_weight='normal',
             weekday_font_slant='roman',
             weekday_font_underline=False,
+            weekday_font_size=None,
             date_heading_font_family="Garamond",
             date_heading_font_weight='normal',
             date_heading_font_slant='roman',
             date_heading_font_underline=False,
+            date_heading_font_size=None,
             date_text_font_family="Arial CE",
             date_text_font_weight='normal',
             date_text_font_slant='roman',
             date_text_font_underline=False,
+            date_text_font_size=None,
             user_highlight_colour="gray75",
             user_highlight_text="black",
             img_pos_x=0,
             img_pos_y=0,
-            img_anchor='nw'):
+            img_anchor='nw',
+            current_date_highlight=True):
 
         self.command = command   # create global instance of user command for use within the click binding
 
@@ -68,6 +72,8 @@ class Calendar:
         self.user_highlight_colour = user_highlight_colour   # colour of the highlight that is displayed when the user clicks on a month date
         self.user_highlight_text = user_highlight_text       # colour of the text associated with the user highlight
         self.date_box_width = date_box_width                 # width of the lines that make up the date boxes
+        self.current_date_highlight = current_date_highlight # toggles the current date highlight on/off, using True/False values
+        self.date_box_fill = date_box_fill                   # colour of the background of the date boxes associated with the current month
 
         # The following condition describes the preset styling options for the "Dark" style variation. Note: if the preset
         # is not specified, the calendar defaults to the options defined within the __init__ parameters. The default styling
@@ -79,7 +85,7 @@ class Calendar:
             arrow_box_border = "gray25"              # colour of the box outline that contains the arrows for selecting previous and following months
             arrow_box_fill = "gray7"                 # colour inside the box that contains the arrows
             arrow_box_width = 1                      # width of the line used to create the box that contains the arrows
-            date_box_fill = "gray7"                  # colour inside the boxes that make up the monthly calendar grid
+            self.date_box_fill = "gray7"                  # colour inside the boxes that make up the monthly calendar grid
             date_box_width = 2                       # width of the line used to create the grid for the monthly calendar
             self.date_boxes_outline = "gray50"       # colour of the box outline for the boxes that make up the monthly claendar grid
             arrow_outline = "gray25"                 # colour for the outline of the polygon (i.e - triangle) that represents the calendar arrows
@@ -193,7 +199,10 @@ class Calendar:
                                            tags=weekdays[heading_inc])
             heading_inc = heading_inc + 1
 
-        font_size = int((box_depth * 0.75) * 0.75)
+        if weekday_font_size != None:
+            font_size = weekday_font_size
+        else:
+            font_size = int((box_depth * 0.75) * 0.75)
         weekday_font = font.Font(family=weekday_font_family, size=font_size, 
             weight=weekday_font_weight, slant=weekday_font_slant, underline=weekday_font_underline)
         for day in weekdays:
@@ -227,7 +236,10 @@ class Calendar:
         arrow_box_coords = self.Calendar.coords("arrow_box")
         self.arrow_date_x = (arrow_box_coords[0] + arrow_box_coords[2]) / 2
         self.arrow_date_y = (arrow_box_coords[1] + arrow_box_coords[3]) / 2
-        font_size = int((self.arrow_date_y * 0.75) * 0.5)
+        if date_heading_font_size != None:
+            font_size = date_heading_font_size
+        else:
+            font_size = int((self.arrow_date_y * 0.75) * 0.5)
         self.date_heading_font = font.Font(family=date_heading_font_family, size=font_size, 
             weight=date_heading_font_weight, slant=date_heading_font_slant, underline=date_heading_font_underline)
         self.Calendar.create_text(self.arrow_date_x, self.arrow_date_y, text=self.date_today, anchor="center",
@@ -243,7 +255,10 @@ class Calendar:
         width_inc = 0
         depth_inc = 0
         box_count = 0
-        self.date_box_font_size = int(((box_depth) * 0.75) * 0.6)
+        if date_text_font_size != None:
+            self.date_box_font_size = date_text_font_size
+        else:
+            self.date_box_font_size = int(((box_depth) * 0.75) * 0.6)
         self.date_text_font = font.Font(family=date_text_font_family, size=self.date_box_font_size, 
             weight=date_text_font_weight, slant=date_text_font_slant, underline=date_text_font_underline)
         self.date_box_tags = []
@@ -254,7 +269,7 @@ class Calendar:
                                            (padding + (box_width * (width_inc + 1))),
                                            (box_y_start + (box_depth * (depth_inc + 1))),
                                            outline=self.date_boxes_outline, tags=box_tag,
-                                           fill=date_box_fill, width=date_box_width)
+                                           fill=None, width=date_box_width)
             self.date_box_tags.append(box_tag)
             width_inc = width_inc + 1
             box_count = box_count + 1
@@ -368,11 +383,14 @@ class Calendar:
         if len(self.date_tags[0]) > 0:
             for date in self.date_tags[0]:
                 self.Calendar.delete(date)
+            for coll in self.date_colour:
+                self.Calendar.delete(coll)
             if (self.date_store[0] != self.year) or (self.date_store[1] != self.month):
                 self.Calendar.delete("date_highlight")
                 self.Calendar.delete("date_highlight_text")
         day_count = 1
         self.date_tags = [[], []]
+        self.date_colour = []
         monthrange = calendar.monthrange(self.year, self.month)
         month_length = monthrange[1]
         start_box = (calendar.weekday(self.year, self.month, 1)) + 1
@@ -380,14 +398,19 @@ class Calendar:
         self.foll_box = start_box + int(month_length)
         while month_length != 0:
             date_tag = "day_" + str(day_count)
+            date_colour_tag = "day_colour" + str(day_count)
             date_box_coords = self.Calendar.coords(self.date_box_tags[start_box])
             x_coords = (date_box_coords[0] + date_box_coords[2]) / 2
             y_coords = (date_box_coords[1] + date_box_coords[3]) / 2
+            self.Calendar.create_rectangle(date_box_coords[0], date_box_coords[1],
+                date_box_coords[2], date_box_coords[3], fill=self.date_box_fill, 
+                outline=self.date_boxes_outline, width=self.date_box_width, tags=date_colour_tag)
             self.Calendar.create_text(x_coords, y_coords, text=str(day_count), anchor="center",
                                       font=self.date_text_font, fill=self.date_text_fill, activefill=self.date_highlight,
                                       tags=date_tag)
             self.date_tags[0].append(date_tag)
             self.date_tags[1].append(date_box_coords)
+            self.date_colour.append(date_colour_tag)
             day_count = day_count + 1
             start_box = start_box + 1
             month_length = month_length - 1
@@ -462,17 +485,18 @@ class Calendar:
         trail_boxes(following=True)
 
         # create date highlight
-        if (self.date_store[0] == self.year) and (self.date_store[1] == self.month):
-            highlight_coords = self.Calendar.coords("day_" + str(self.date_store[2]))
-            hx_1 = highlight_coords[0] - self.date_box_font_size
-            hy_1 = highlight_coords[1] - self.date_box_font_size
-            hx_2 = highlight_coords[0] + self.date_box_font_size
-            hy_2 = highlight_coords[1] + self.date_box_font_size
-            self.Calendar.create_oval(hx_1, hy_1, hx_2, hy_2, fill=self.date_highlight, outline=self.date_highlight,
-                                      tags="date_highlight")
-            self.Calendar.create_text(highlight_coords[0], highlight_coords[1], text=str(self.date_store[2]),
-                                      anchor="center", font=self.date_text_font, fill=self.text_highlight_fill,
-                                      tags="date_highlight_text")
+        if self.current_date_highlight:
+            if (self.date_store[0] == self.year) and (self.date_store[1] == self.month):
+                highlight_coords = self.Calendar.coords("day_" + str(self.date_store[2]))
+                hx_1 = highlight_coords[0] - self.date_box_font_size
+                hy_1 = highlight_coords[1] - self.date_box_font_size
+                hx_2 = highlight_coords[0] + self.date_box_font_size
+                hy_2 = highlight_coords[1] + self.date_box_font_size
+                self.Calendar.create_oval(hx_1, hy_1, hx_2, hy_2, fill=self.date_highlight, outline=self.date_highlight,
+                                          tags="date_highlight")
+                self.Calendar.create_text(highlight_coords[0], highlight_coords[1], text=str(self.date_store[2]),
+                                          anchor="center", font=self.date_text_font, fill=self.text_highlight_fill,
+                                          tags="date_highlight_text")
 
         # delete checkboxes if they exist
         if len(self.checkbox_tags) != 0:
