@@ -163,18 +163,22 @@ The table below specifies opitons availiable for styling and other operations as
 | weekday_font_weight= | Sets the weight of the font used to create the weekday headings. Valid options are 'normal' or 'bold' |
 | weekday_font_slant= | Sets the slant of the font used to create the weekday headings. Valid options are 'roman' or 'italic' |
 | weekday_font_underline= | Sets the underline of the font used to creates the weekday heading. Valid options are True or False |
+| weekday_font_size= | Sets the font size of the weekday headings. Note: this overrides the default size and scaling of the font |
 | calendar_date_title= | Sets the colour of the text associated with the calendar title (ex: Aug 2020) |
 | date_heading_font_family= | Sets the font type for the Calendar date heading. (Accepts any of the valid native tkinter fonts) |
 | date_heading_font_weight= | Sets the weight of the font used to create the Calendar date heading. Valid options are 'normal' or 'bold' |
 | date_heading_font_slant= | Sets the slant of the font used to create the Calendar date heading. Valid options are 'roman' or 'italic' |
 | date_heading_font_underline= | Sets the underline of the font used to create the Calendar date heading. Valid options are True or False |
+| date_heading_font_size= | Sets the font size used to create the Calendar heading. Note: This overrides the default size and scaling of the font |
 | date_text_fill= | Sets the colour of the text numbers associated with the month dates. |
 | date_text_font_family= | Sets the font type used to create the month dates. (Accepts any of the valid native tkinter fonts) |
 | date_text_font_weight= | Sets the weight of the font used to create the month dates. Valid options are 'normal' or 'bold' |
 | date_text_font_slant= | Sets the slant of the font used to create the month dates. Valid options are 'roman' or 'italic' |
 | date_text_font_underline= | Sets the underline of the font used to create the month dates. Valid options are True or False |
+| date_text_font_size= | Sets the font size of the dates on the Calendar month grid. Note: this overrides the default size and scaling of the font |
 | trail_box_fill= | Sets the colour of the background of the date boxes that trail into the previous and following months. |
 | trail_text_fill= | Sets the colour of the text numbers associated with the trailing date boxes. |
+| current_date_highlight= | Toggles the current date highlight on/off. This parameter accepts a True or False value. Example: ``` Calendar = Calendar(root, current_date_highlight=False) ``` |
 | date_highlight= | Sets the colour of the permanent date highlight associated with the current date retrieved from the OS. |
 | text_highlight_fill= | Sets the colour of the text associated with the permanent date highlight. |
 | user_highlight_colour= | Sets the colour of the highlight that is created when the user clicks on a month date. |
