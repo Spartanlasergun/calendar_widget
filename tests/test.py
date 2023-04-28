@@ -13,9 +13,9 @@ def Calendar_Click():
 
 Calendar = Calendar(root,
 	command = Calendar_Click,
-	width=300,   # fixed issue 1
-	height=200,  
-	padding=5   # fixed issue 15
+	#width=300,   # fixed issue 1
+	#height=200,  
+	#padding=10   # fixed issue 15
 	)
 
 Calendar.checkboxes(8, 4, 2023, status=True)
