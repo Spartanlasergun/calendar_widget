@@ -107,12 +107,8 @@ class Calendar:
 
 
         # The default width of the calendar object is set at 300 pixels. The default height is set to 200 pixels.
-        size = width
-        #depth = (0.666 * size)
-        depth = height
-        padding = float(float(padding) / float(300.03))
-        #padding = int(size * 0.03333)
-        padding = int(size * padding)
+        size = width     # The widget was originally created with size as the only modifiable parameter.
+        depth = height   # The reassignment fixes some of these design flaws, though it is a bit redundant.
 
 
         # check if a image file is specified for the background
