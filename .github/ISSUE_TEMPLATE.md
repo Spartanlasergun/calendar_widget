@@ -1,4 +1,3 @@
-* OCTIS version:
 * Python version:
 * Operating System:
 
