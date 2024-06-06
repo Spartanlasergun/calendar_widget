@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "calendar_widget"
-version = "1.0.9"
+version = "1.0.10"
 authors = [
   { name="Spartanlasergun", email="bns360@live.com" },
 ]
