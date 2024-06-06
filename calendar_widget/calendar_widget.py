@@ -640,6 +640,11 @@ class Calendar:
         date = str(self.day_num) + "-" + str(self.month) + "-" + str(self.year)
         return date
 
+    # the function below returns the current date as retrieved from the operating system
+    def getdate_today(self):
+        today = str(self.date_store[2]) + "-" + str(self.date_store[1]) + "-" + str(self.date_store[0])
+        return today
+
     # destroy method for the Calendar Widget
     def destroy(self):
         self.Calendar.destroy()
