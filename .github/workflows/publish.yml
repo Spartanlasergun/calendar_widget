@@ -1,0 +1,37 @@
+name: Publish Python Package
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12'
+
+    - name: Install latest version of build
+      run: pip install --upgrade build
+
+    - name: Build package
+      run: python -m build
+
+    - name: Install twine
+      run: pip install --upgrade twine
+
+    - name: Publish package to TestPyPI
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.CALENDAR_WIDGET_TOKEN }}
+      run: twine upload --repository dist/* --skip-existing
