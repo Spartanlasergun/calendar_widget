@@ -1,1 +1,1 @@
-from calendar_widget import Calendar
+from .calendar_widget import Calendar
