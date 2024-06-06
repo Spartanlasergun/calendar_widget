@@ -1,5 +1,5 @@
 import tkinter
-import calendar_widget
+from calendar_widget import Calendar
 
 # define the main window into which the widget will be placed
 root = tkinter.Tk()
