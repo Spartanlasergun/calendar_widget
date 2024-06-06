@@ -30,8 +30,8 @@ jobs:
     - name: Install twine
       run: pip install --upgrade twine
 
-    - name: Publish package to TestPyPI
+    - name: Publish to PYPI
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.CALENDAR_WIDGET_TOKEN }}
-      run: twine upload --repository dist/* --skip-existing
+      run: twine upload --repository-url https://upload.pypi.org/legacy/ dist/* --skip-existing
