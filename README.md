@@ -56,12 +56,12 @@ Calendar = Calendar(root, command=user_command, ...)
 
 ##### To retrieve a selected date on the calendar, use the getdate() command:
 ```python
-Calendar.getdate()
+selected_date = Calendar.getdate()
 ```
 
 ##### To retrieve the current date as specified by the operating system, use the getdate_today() command:
 ```python
-Calendar.getdate_today()
+date_today = Calendar.getdate_today()
 ```
 
 ##### To create a checkbox on the calendar, the command is as follows:
